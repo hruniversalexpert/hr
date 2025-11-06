@@ -3,367 +3,719 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universal Expert </title>
+    <title>Universal Expert HR - Job Application | GCC & Europe Jobs</title>
+    <meta name="description" content="Apply for top jobs in GCC countries & Europe. Hospitality, Construction, Healthcare jobs in Malta, Croatia, Greece, Bulgaria, Serbia.">
+    <meta name="keywords" content="jobs in europe, gcc jobs, malta jobs, croatia jobs, greece jobs, bulgaria jobs, serbia jobs, recruitment agency">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --primary-blue: #1a73e8;
+            --light-blue: #e8f0fe;
+            --white: #ffffff;
+            --dark-blue: #0d47a1;
+            --gray: #f5f7fa;
+            --text-dark: #2d3748;
+            --success-green: #10b981;
+            --error-red: #ef4444;
+            --accent-orange: #f59e0b;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
         }
-
-        :root {
-            --primary-blue: #1a4b8c;
-            --secondary-blue: #2c6cb0;
-            --light-blue: #e8f2ff;
-            --accent-blue: #4a90e2;
-            --dark-blue: #0d2b50;
-            --white: #ffffff;
-            --dark-text: #333333;
-            --light-text: #666666;
-            --gradient-primary: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-            --gradient-secondary: linear-gradient(135deg, var(--secondary-blue), var(--accent-blue));
-        }
-
+        
         body {
-            background-color: var(--light-blue);
-            color: var(--dark-text);
-            overflow-x: hidden;
-        }
-
-        header {
-            background: var(--gradient-primary);
-            color: var(--white);
-            padding: 1.5rem 5%;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .logo-container {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
             display: flex;
-            align-items: center;
-            gap: 15px;
+            justify-content: center;
+            align-items: flex-start;
         }
-
-        .logo {
-            width: 70px;
-            height: 70px;
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        
+        .container {
+            max-width: 1000px;
+            width: 100%;
             background: var(--white);
-            border-radius: 50%;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .logo {
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            gap: 12px;
+            margin-bottom: 10px;
         }
-
-        .logo i {
-            font-size: 32px;
-            color: var(--primary-blue);
+        
+        .logo-icon {
+            font-size: 2.5rem;
         }
-
-        .company-name {
-            font-size: 2rem;
+        
+        .logo-text {
+            font-size: 1.8rem;
             font-weight: 700;
         }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        
+        .tagline {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .content {
             padding: 2rem;
-        }
-
-        .hero-section {
-            text-align: center;
-            padding: 4rem 0;
-        }
-
-        .hero-title {
-            font-size: 2.5rem;
-            color: var(--primary-blue);
-            margin-bottom: 1.5rem;
-        }
-
-        .form-section {
-            background-color: var(--white);
-            border-radius: 16px;
-            padding: 3rem;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            margin-top: 2rem;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            color: var(--primary-blue);
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .form-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: 1.5fr 1fr;
             gap: 2rem;
-            margin-bottom: 2rem;
         }
-
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .form-container {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+        
+        .info-section {
+            background: var(--light-blue);
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+        
+        .section-title {
+            color: var(--dark-blue);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-orange);
+        }
+        
         .form-group {
             margin-bottom: 1.5rem;
         }
-
-        .form-group label {
+        
+        label {
             display: block;
-            margin-bottom: 0.7rem;
+            margin-bottom: 0.5rem;
             font-weight: 600;
+            color: var(--text-dark);
         }
-
-        .form-control {
+        
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        select {
             width: 100%;
-            padding: 15px;
-            border: 2px solid #e1e5eb;
-            border-radius: 10px;
-            font-size: 1rem;
+            padding: 14px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
         }
-
-        .form-control:focus {
-            border-color: var(--accent-blue);
+        
+        input:focus,
+        select:focus {
+            border-color: var(--primary-blue);
             outline: none;
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
         }
-
-        .phone-input-container {
+        
+        .checkbox-group {
             display: flex;
-            gap: 10px;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
         }
-
-        .country-code {
-            flex: 0 0 120px;
-        }
-
-        .phone-number {
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            background: var(--light-blue);
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
             flex: 1;
+            min-width: 120px;
         }
-
-        .buttons-container {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 2.5rem;
+        
+        .checkbox-item:hover {
+            border-color: var(--primary-blue);
         }
-
-        .btn {
-            padding: 16px 35px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            font-weight: 600;
+        
+        .checkbox-item input {
+            margin-right: 8px;
+        }
+        
+        .file-upload {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+            border: 2px dashed #cbd5e0;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            background: var(--light-blue);
+        }
+        
+        .file-upload:hover {
+            border-color: var(--primary-blue);
+        }
+        
+        .file-upload-btn {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
             cursor: pointer;
+            display: inline-block;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .file-upload-btn:hover {
+            background-color: var(--dark-blue);
+        }
+        
+        .file-upload input[type="file"] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(to right, var(--primary-blue), var(--dark-blue));
+            color: white;
+            border: none;
+            padding: 16px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(26, 115, 232, 0.2);
+        }
+        
+        .submit-btn:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .message {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            display: none;
+            font-weight: 500;
+        }
+        
+        .success-message {
+            background-color: #d1fae5;
+            color: #065f46;
+            border: 2px solid #a7f3d0;
+        }
+        
+        .error-message {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border: 2px solid #fca5a5;
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 12px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .required {
+            color: var(--error-red);
+        }
+        
+        .form-note {
+            text-align: center;
+            color: #6b7280;
+            margin-top: 15px;
+            font-style: italic;
+        }
+        
+        .file-size-warning {
+            color: var(--error-red);
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .job-categories {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 2rem;
+        }
+        
+        .job-category {
             display: flex;
             align-items: center;
             gap: 12px;
+            padding: 12px;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
         }
-
-        .btn-primary {
-            background: var(--gradient-primary);
-            color: var(--white);
+        
+        .job-category:hover {
+            transform: translateY(-3px);
         }
-
-        .btn-whatsapp {
-            background: linear-gradient(to right, #25D366, #128C7E);
-            color: var(--white);
+        
+        .job-category i {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
         }
-
-        .success-message {
-            display: none;
-            background: #4CAF50;
+        
+        .countries {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .country {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 12px;
+            background: var(--white);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-info {
+            margin-top: 2rem;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
             color: white;
+            border-radius: 50px;
             padding: 15px 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
         }
-
-        .error-message {
-            display: none;
-            background: #ff4444;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            text-align: center;
+        
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
         }
-
-        footer {
-            background: var(--dark-blue);
-            color: var(--white);
-            padding: 3rem 5% 2rem;
-            margin-top: 5rem;
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        .whatsapp-icon {
+            font-size: 24px;
+        }
+        
+        @media (max-width: 768px) {
+            .checkbox-group {
+                flex-direction: column;
+            }
+            
+            .checkbox-item {
+                min-width: 100%;
+            }
+            
+            .whatsapp-float span {
+                display: none;
+            }
+            
+            .whatsapp-float {
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 1.5rem;
+            }
+            
+            .content {
+                padding: 1.5rem;
+            }
+            
+            .logo-text {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <div class="logo">
-                <i class="fas fa-users"></i>
-            </div>
-            <div>
-                <h1 class="company-name">Universal Expert HR</h1>
-                <p>Connecting Global Talent with Exceptional Opportunities</p>
-            </div>
-        </div>
-    </header>
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/971501234567?text=Hello%20Universal%20Expert%20HR,%20I%20would%20like%20to%20know%20more%20about%20job%20opportunities" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp whatsapp-icon"></i>
+        <span>Message Us</span>
+    </a>
 
     <div class="container">
-        <section class="hero-section">
-            <h2 class="hero-title">Your Gateway to Global Career Opportunities</h2>
-            <p>Submit your CV today and let us help you find your dream job.</p>
-        </section>
-
-        <section class="form-section">
-            <h2 class="section-title">Quick CV Submission</h2>
-            <form id="cvForm">
-                <div class="form-grid">
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-briefcase logo-icon"></i>
+                <div class="logo-text">Universal Expert HR</div>
+            </div>
+            <div class="tagline">Your Gateway to European Career Opportunities</div>
+            <p>Apply for top jobs in Malta, Croatia, Greece, Bulgaria & Serbia</p>
+        </div>
+        
+        <div class="content">
+            <!-- FORM IS NOW ON THE LEFT SIDE (TOP VISUAL PRIORITY) -->
+            <div class="form-container">
+                <h2 class="section-title">Job Application Form</h2>
+                
+                <div class="message success-message" id="successMessage">
+                    ✅ Thank you for your application! We will contact you soon.
+                </div>
+                
+                <div class="message error-message" id="errorMessage">
+                    ❌ Error submitting application. Please try again.
+                </div>
+                
+                <form id="jobApplicationForm">
                     <div class="form-group">
-                        <label for="firstName">First Name</label>
-                        <input type="text" id="firstName" class="form-control" placeholder="Enter your first name" required>
+                        <label for="fullName">Full Name <span class="required">*</span></label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
                     </div>
+                    
                     <div class="form-group">
-                        <label for="lastName">Last Name</label>
-                        <input type="text" id="lastName" class="form-control" placeholder="Enter your last name" required>
+                        <label for="nationality">Nationality <span class="required">*</span></label>
+                        <input type="text" id="nationality" name="nationality" placeholder="Enter your nationality" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="+971 50 123 4567" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Gender <span class="required">*</span></label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="radio" id="male" name="gender" value="Male" required>
+                                <label for="male">Male</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" id="female" name="gender" value="Female" required>
+                                <label for="female">Female</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Visa Status <span class="required">*</span></label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="radio" id="visaHolder" name="visaStatus" value="Visa Holder" required>
+                                <label for="visaHolder">Visa Holder</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" id="ownVisa" name="visaStatus" value="Own Visa" required>
+                                <label for="ownVisa">Own Visa</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" id="nonVisa" name="visaStatus" value="Non Visa" required>
+                                <label for="nonVisa">Non Visa</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="jobRole">Desired Job Role <span class="required">*</span></label>
+                        <select id="jobRole" name="jobRole" required>
+                            <option value="">Select a job role</option>
+                            <optgroup label="Blue Color Jobs">
+                                <option value="Hospitality Staff">Hospitality Staff</option>
+                                <option value="Welder">Welder</option>
+                                <option value="Helper">Helper</option>
+                                <option value="Driver">Driver</option>
+                                <option value="Construction Worker">Construction Worker</option>
+                            </optgroup>
+                            <optgroup label="Other Positions">
+                                <option value="Administrative Staff">Administrative Staff</option>
+                                <option value="Sales Executive">Sales Executive</option>
+                                <option value="Other">Other</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cvUpload">Upload CV (PDF, DOC, DOCX) <span class="required">*</span></label>
+                        <div class="file-upload">
+                            <button type="button" class="file-upload-btn">Choose CV File</button>
+                            <input type="file" id="cvUpload" name="cvUpload" accept=".pdf,.doc,.docx" required>
+                        </div>
+                        <div id="fileName" style="margin-top: 15px; font-weight: 500; color: var(--primary-blue);"></div>
+                        <div class="file-size-warning">Maximum file size: 5MB</div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span id="submitText">Submit Application</span>
+                        <span id="submitLoading" class="loading" style="display: none;"></span>
+                    </button>
+                    
+                    <div class="form-note">
+                        All fields marked with <span class="required">*</span> are required
+                    </div>
+                </form>
+            </div>
+            
+            <!-- INFO SECTION ON THE RIGHT -->
+            <div class="info-section">
+                <h2 class="section-title">Top Job Categories</h2>
+                <div class="job-categories">
+                    <div class="job-category">
+                        <i class="fas fa-concierge-bell"></i>
+                        <div>
+                            <h3>Hospitality</h3>
+                            <p>Hotel & Restaurant Staff</p>
+                        </div>
+                    </div>
+                    <div class="job-category">
+                        <i class="fas fa-hard-hat"></i>
+                        <div>
+                            <h3>Construction</h3>
+                            <p>Workers & Technicians</p>
+                        </div>
+                    </div>
+                    <div class="job-category">
+                        <i class="fas fa-user-md"></i>
+                        <div>
+                            <h3>Healthcare</h3>
+                            <p>Nurses & Caregivers</p>
+                        </div>
+                    </div>
+                    <div class="job-category">
+                        <i class="fas fa-truck"></i>
+                        <div>
+                            <h3>Logistics</h3>
+                            <p>Drivers & Warehouse Staff</p>
+                        </div>
+                    </div>
+                    <div class="job-category">
+                        <i class="fas fa-industry"></i>
+                        <div>
+                            <h3>Manufacturing</h3>
+                            <p>Factory Workers</p>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <div class="phone-input-container">
-                        <div class="form-group country-code">
-                            <select id="countryCode" class="form-control" required>
-                                <option value="" disabled selected>Code</option>
-                                <option value="+977">Nepal (+977)</option>
-                                <option value="+91">India (+91)</option>
-                                <option value="+971">UAE (+971)</option>
-                                <option value="+92">Pakistan (+92)</option>
-                                <option value="+880">Bangladesh (+880)</option>
-                            </select>
-                        </div>
-                        <div class="form-group phone-number">
-                            <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
-                        </div>
-                    </div>
+                <h2 class="section-title">European Destinations</h2>
+                <div class="countries">
+                    <div class="country">🇲🇹 Malta</div>
+                    <div class="country">🇭🇷 Croatia</div>
+                    <div class="country">🇬🇷 Greece</div>
+                    <div class="country">🇧🇬 Bulgaria</div>
+                    <div class="country">🇷🇸 Serbia</div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="nationality">Nationality</label>
-                    <select id="nationality" class="form-control" required>
-                        <option value="" disabled selected>Select your nationality</option>
-                        <option value="Nepali">Nepali</option>
-                        <option value="Indian">Indian</option>
-                        <option value="Pakistani">Pakistani</option>
-                        <option value="Bangladeshi">Bangladeshi</option>
-                        <option value="Emirati">Emirati</option>
-                        <option value="Other">Other</option>
-                    </select>
+                <div class="contact-info">
+                    <h2 class="section-title">Contact Us</h2>
+                    <p><i class="fas fa-envelope"></i> hruniversalexp@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +971 50 123 4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Dubai, UAE</p>
                 </div>
-                
-                <div class="buttons-container">
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-paper-plane"></i> Submit CV
-                    </button>
-                    <button type="button" class="btn btn-whatsapp" id="whatsappBtn">
-                        <i class="fab fa-whatsapp"></i> Contact HR
-                    </button>
-                </div>
-                
-                <div id="successMessage" class="success-message">
-                    <i class="fas fa-check-circle"></i> Thank you! Your CV has been submitted successfully.
-                </div>
-                
-                <div id="errorMessage" class="error-message">
-                    <i class="fas fa-exclamation-triangle"></i> There was an error submitting your CV. Please try again.
-                </div>
-            </form>
-        </section>
+            </div>
+        </div>
     </div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; @202@ Universal Expert. All rights reserved.</p>
-        </div>
-    </footer>
-
     <script>
-        // REPLACE THIS URL WITH YOUR NEW DEPLOYMENT URL
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbydE9QMB6GUq3dqeN16qHOU9LGiCmrMDym3gDKroQdpwo46tY9_xchskzt6zrIuP5c0TA/exec';
-
-        document.getElementById('cvForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
+        document.addEventListener('DOMContentLoaded', function() {
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxUdn0JT--PIGms1duGgvmbUnYgHFzNfac_mJieWLccKCk0Zna-KkfziBEtcNkBS6CYrA/exec';
             
-            const firstName = document.getElementById('firstName').value;
-            const lastName = document.getElementById('lastName').value;
-            const phone = document.getElementById('phone').value;
-            const countryCode = document.getElementById('countryCode').value;
-            const nationality = document.getElementById('nationality').value;
+            const form = document.getElementById('jobApplicationForm');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            const submitBtn = document.getElementById('submitBtn');
+            const submitText = document.getElementById('submitText');
+            const submitLoading = document.getElementById('submitLoading');
+            const fileInput = document.getElementById('cvUpload');
+            const fileNameDisplay = document.getElementById('fileName');
             
-            // Hide messages
-            document.getElementById('successMessage').style.display = 'none';
-            document.getElementById('errorMessage').style.display = 'none';
-            
-            // Show loading
-            const submitBtn = document.querySelector('.btn-primary');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
-            submitBtn.disabled = true;
-            
-            try {
-                // Create URL parameters
-                const params = new URLSearchParams({
-                    'firstName': firstName,
-                    'lastName': lastName,
-                    'phone': countryCode + ' ' + phone,
-                    'nationality': nationality,
-                    'timestamp': new Date().toISOString()
-                });
-
-                const response = await fetch(scriptURL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                    },
-                    body: params
-                });
-
-                const result = await response.json();
-                
-                if (result.result === 'success') {
-                    document.getElementById('successMessage').style.display = 'block';
-                    document.getElementById('cvForm').reset();
+            // File upload display
+            fileInput.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    const file = this.files[0];
+                    const fileSizeMB = (file.size / (1024 * 1024)).toFixed(2);
                     
-                    setTimeout(() => {
-                        document.getElementById('successMessage').style.display = 'none';
-                    }, 5000);
+                    if (file.size > 5 * 1024 * 1024) {
+                        alert('File size too large. Please select a file smaller than 5MB.');
+                        this.value = '';
+                        fileNameDisplay.textContent = '';
+                    } else {
+                        fileNameDisplay.textContent = 'Selected: ' + file.name + ' (' + fileSizeMB + ' MB)';
+                    }
                 } else {
-                    throw new Error(result.message);
+                    fileNameDisplay.textContent = '';
+                }
+            });
+            
+            // Form submission
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                successMessage.style.display = 'none';
+                errorMessage.style.display = 'none';
+                
+                if (!form.checkValidity()) {
+                    alert('Please fill in all required fields correctly.');
+                    return;
                 }
                 
-            } catch (error) {
-                console.error('Error:', error);
-                document.getElementById('errorMessage').style.display = 'block';
+                submitBtn.disabled = true;
+                submitText.textContent = 'Submitting...';
+                submitLoading.style.display = 'inline-block';
                 
-                setTimeout(() => {
-                    document.getElementById('errorMessage').style.display = 'none';
-                }, 5000);
-            } finally {
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }
-        });
-
-        document.getElementById('whatsappBtn').addEventListener('click', function() {
-            const phoneNumber = "+971503257878";
-            const message = "Hello Universal Expert HR team, I would like to know more about job opportunities.";
-            const url = `https://wa.me/${+971503257878}?text=${encodeURIComponent(message)}`;
-            window.open(url, '_blank');
+                try {
+                    const formData = {
+                        fullName: document.getElementById('fullName').value,
+                        nationality: document.getElementById('nationality').value,
+                        phone: document.getElementById('phone').value,
+                        email: document.getElementById('email').value,
+                        gender: document.querySelector('input[name="gender"]:checked').value,
+                        visaStatus: document.querySelector('input[name="visaStatus"]:checked').value,
+                        jobRole: document.getElementById('jobRole').value,
+                        cvFileName: fileInput.files[0] ? fileInput.files[0].name : 'No file'
+                    };
+                    
+                    const params = new URLSearchParams();
+                    for (const [key, value] of Object.entries(formData)) {
+                        params.append(key, value);
+                    }
+                    
+                    const urlWithParams = scriptURL + '?' + params.toString();
+                    
+                    const response = await fetch(urlWithParams, { method: 'GET' });
+                    const result = await response.json();
+                    
+                    if (result.status === 'success') {
+                        successMessage.style.display = 'block';
+                        form.reset();
+                        fileNameDisplay.textContent = '';
+                        successMessage.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        throw new Error(result.message);
+                    }
+                    
+                } catch (error) {
+                    errorMessage.textContent = 'Error: ' + error.message;
+                    errorMessage.style.display = 'block';
+                    errorMessage.scrollIntoView({ behavior: 'smooth' });
+                } finally {
+                    submitBtn.disabled = false;
+                    submitText.textContent = 'Submit Application';
+                    submitLoading.style.display = 'none';
+                }
+            });
         });
     </script>
 </body>
 </html>
-
